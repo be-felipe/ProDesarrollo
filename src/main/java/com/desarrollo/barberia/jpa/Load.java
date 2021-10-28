@@ -27,7 +27,7 @@ public class Load {
 
 	
 	@Bean
-	CommandLineRunner initDatabase(BarberiaRepository repository,ReservaRepository reservarepository) {
+	CommandLineRunner initDatabase(BarberiaRepository repository,ReservaRepository reservarepository,AdminRepository adminRepository) {
 		return args -> {
 			System.out.println("ENTRA");
 			
@@ -46,6 +46,13 @@ public class Load {
 			ras.setAsistio(true);
 			ras.setBarberia(admin1);
 			reservarepository.save(ras);
+			
+			Admin ad= new Admin();
+			
+			ad.setContrausuario("hola");
+			ad.setCorreousuario("Rompebolas20001@gmail.com");
+			ad.setNombreusuario("Juan carlos");
+			adminRepository.save(ad);
 			/*
 			Materia desarrolloWeb = new Materia();
 			desarrolloWeb.setNombre("Desarrollo Web");
