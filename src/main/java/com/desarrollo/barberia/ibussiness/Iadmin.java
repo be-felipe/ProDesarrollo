@@ -10,6 +10,6 @@ import com.desarrollo.barberia.model.Admin;
 public interface Iadmin {
 	public Page<Admin> getAdmins(Pageable pageable);
 	public Admin crearAdmin(Admin newcli);
-	public Optional<Admin> getAdminById(Long id);
+	public Optional<Admin> getAdminById(long id);
 	public void DeleteAdmin(Admin id);
 }

@@ -6,5 +6,8 @@ public class AdminDTO extends UsuarioDTO {
 		super(idusuario, nombreusuario, correousuario, contrausuario);
 		// TODO Auto-generated constructor stub
 	}
+	public AdminDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

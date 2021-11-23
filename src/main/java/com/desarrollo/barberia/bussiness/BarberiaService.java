@@ -25,6 +25,7 @@ public class BarberiaService implements Ibarberia{
 	
 	@Override
     public Page<Barberia> getBarberias(Pageable pageable) {
+		
 		return barberiaRepository.findAll(pageable);
 	}
     @Override
@@ -41,7 +42,15 @@ public class BarberiaService implements Ibarberia{
   	public void DeleteBarberia(Barberia id)
   	{
     	barberiaRepository.delete(id);
+    	
   	}
+    @Override
+  	public void DeleteBarberiaId(Long id)
+  	{
+    	barberiaRepository.deleteById(id);
+  	}
+    
+    
 	
 
 	

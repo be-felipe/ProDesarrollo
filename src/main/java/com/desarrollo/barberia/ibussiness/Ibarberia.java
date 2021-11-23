@@ -12,4 +12,5 @@ public interface Ibarberia {
 	public Barberia CrearBarberia(Barberia newcli);
 	public Optional<Barberia> getBarberiaById(Long id);
 	public void DeleteBarberia(Barberia id);
+	public void DeleteBarberiaId(Long id);
 }

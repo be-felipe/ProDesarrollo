@@ -43,6 +43,14 @@ public class Reserva {
 	}
 	
 	
+	public Long getIdreserva() {
+		return idreserva;
+	}
+
+	public void setIdreserva(Long idreserva) {
+		this.idreserva = idreserva;
+	}
+
 	public boolean isAsistio() {
 		return Asistio;
 	}

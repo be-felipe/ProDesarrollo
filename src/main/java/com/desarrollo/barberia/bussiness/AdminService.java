@@ -32,7 +32,7 @@ public class AdminService implements Iadmin {
 	}
     
     @Override
-	public Optional<Admin> getAdminById(Long id) {
+	public Optional<Admin> getAdminById(long id) {
     	
 		return adminRepository.findById(id);
 	}

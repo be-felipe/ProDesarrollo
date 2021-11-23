@@ -11,18 +11,24 @@ public class BarberiaDTO {
 	
 	private String logobarberia;
 
-	public BarberiaDTO(long idbarberia, String nombrebarberia, String direccionbarberia, float preciobarberia,
-			String logobarberia) {
-		super();
-		this.idbarberia = idbarberia;
-		this.nombrebarberia = nombrebarberia;
-		this.direccionbarberia = direccionbarberia;
-		this.preciobarberia = preciobarberia;
-		this.logobarberia = logobarberia;
-	}
-
+	private String fotobarber;
+;
+	
+	
 	public long getIdbarberia() {
 		return idbarberia;
+	}
+
+	public String getFotobarber() {
+		return fotobarber;
+	}
+
+	public void setFotobarber(String fotobarber) {
+		this.fotobarber = fotobarber;
+	}
+
+	public void setIdbarberia(Long idbarberia) {
+		this.idbarberia = idbarberia;
 	}
 
 	public void setIdbarberia(long idbarberia) {
@@ -60,5 +66,7 @@ public class BarberiaDTO {
 	public void setLogobarberia(String logobarberia) {
 		this.logobarberia = logobarberia;
 	}
+
+	
 	
 }

@@ -22,7 +22,8 @@ public class Config {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
 		config.addAllowedOrigin("*");
-		config.addAllowedMethod("GET");
+		config.addAllowedHeader("*");
+		config.addAllowedMethod("*");
 		source.registerCorsConfiguration("/**", config);
 		return new CorsFilter(source);
 	}

@@ -1,13 +1,19 @@
 package com.desarrollo.barberia.model;
 
-import javax.management.relation.Role;
+import java.util.List;
+
+
 import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
@@ -18,17 +24,25 @@ public abstract class Usuario {
 	
 	private String nombreusuario;
 	
+	
 	private String correousuario;
-  private  Role rol;
+     
+	@ManyToOne(fetch = FetchType.LAZY)
+	private  Role rol;
+	
+	
 	private String contrausuario;
-	public Usuario(Long idusuario2, String nombreusuario, String correousuario, String contrausuario) {
+	
+	
+	public Usuario(Long idusuario, String nombreusuario, String correousuario, Role rol, String contrausuario) {
 		super();
-		this.idusuario = idusuario2;
+		this.idusuario = idusuario;
 		this.nombreusuario = nombreusuario;
 		this.correousuario = correousuario;
+		this.rol = rol;
 		this.contrausuario = contrausuario;
 	}
-	
+
 	public Usuario() {
 		super();
 	}

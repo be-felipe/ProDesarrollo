@@ -6,5 +6,8 @@ public class ClienteDTO extends UsuarioDTO{
 		super(idusuario, nombreusuario, correousuario, contrausuario);
 		// TODO Auto-generated constructor stub
 	}
+	public ClienteDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

@@ -9,7 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,14 +29,14 @@ import com.desarrollo.barberia.model.Barberia;
 import com.desarrollo.barberia.model.Cliente;
 
 @RestController
-@RequestMapping("/Barberia")
+@RequestMapping("/barberia")
 public class BarberiaRest {
 	@Autowired
 	private Ibarberia barberiaservice;
 	@Autowired
     private ModelMapper mapper;
-	
-	@GetMapping(value="GetBarberias")
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(value="getbarbers")
 	public List<BarberiaDTO> getReservas(@RequestParam(name= "page")int page,@RequestParam(name="size")int size){
 		
 		Page<Barberia> barberias= barberiaservice.getBarberias(PageRequest.of(page, size));
@@ -42,6 +47,7 @@ public class BarberiaRest {
 		}
 		return res;
 	}
+	
 	
 	@GetMapping(value = "getBarberiabyid")
 	public BarberiaDTO getcliente(@RequestParam("id") Long id) {
@@ -54,15 +60,26 @@ public class BarberiaRest {
 			return null;
 		}
 	}
-	@PutMapping(value = "crearBarberia")
+	@PostMapping(value = "crearBarberia")
     public BarberiaDTO crearBarberia(@RequestBody BarberiaDTO dto) {
 		Barberia barberia= toEntity(dto);
+		
+		
 		return toDTO(barberiaservice.CrearBarberia(barberia));
     }
+	@DeleteMapping(value="Eliminar/{id}")
+	public void deletebarber (@PathVariable ("id") Long id){
+		
+	
+		barberiaservice.DeleteBarberiaId(id);
+		
+	}
 	private Barberia toEntity(BarberiaDTO dto) {
 		return mapper.map(dto, Barberia.class);
 	}
 	private BarberiaDTO toDTO(Barberia res) {
 		return mapper.map(res, BarberiaDTO.class);
 	}
+	
+
 }

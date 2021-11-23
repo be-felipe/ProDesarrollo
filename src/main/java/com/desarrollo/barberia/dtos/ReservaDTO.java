@@ -2,52 +2,76 @@ package com.desarrollo.barberia.dtos;
 
 import java.util.Date;
 
+import com.desarrollo.barberia.model.Barberia;
+import com.desarrollo.barberia.model.Cliente;
+
 public class ReservaDTO {
 
 	private Long idreserva;
 	private String nombrereserva;
 	private Date dia;
-	private String nombarberia;
-	private String nomcliente;
-	public ReservaDTO(long idreserva, String nombrereserva, Date dia, String nombarberia, String nomcliente) {
+	private BarberiaDTO barberia;
+	private ClienteDTO cliente;
+	
+	public ReservaDTO() {
+		
+		
+	}
+
+	public ReservaDTO(Long idreserva, String nombrereserva, Date dia, BarberiaDTO barberia, ClienteDTO cliente) {
 		super();
 		this.idreserva = idreserva;
 		this.nombrereserva = nombrereserva;
 		this.dia = dia;
-		this.nombarberia = nombarberia;
-		this.nomcliente = nomcliente;
-		
+		this.barberia = barberia;
+		this.cliente = cliente;
 	}
-	public long getIdreserva() {
+
+	public Long getIdreserva() {
 		return idreserva;
 	}
-	public void setIdreserva(long idreserva) {
+
+	public void setIdreserva(Long idreserva) {
 		this.idreserva = idreserva;
 	}
+
 	public String getNombrereserva() {
 		return nombrereserva;
 	}
+
 	public void setNombrereserva(String nombrereserva) {
 		this.nombrereserva = nombrereserva;
 	}
+
 	public Date getDia() {
 		return dia;
 	}
+
 	public void setDia(Date dia) {
 		this.dia = dia;
 	}
-	public String getNombarberia() {
-		return nombarberia;
+
+	public BarberiaDTO getBarberia() {
+		return barberia;
 	}
-	public void setNombarberia(String nombarberia) {
-		this.nombarberia = nombarberia;
+
+	public void setBarberia(BarberiaDTO barberia) {
+		this.barberia = barberia;
 	}
-	public String getNomcliente() {
-		return nomcliente;
+
+	public ClienteDTO getCliente() {
+		return cliente;
 	}
-	public void setNomcliente(String nomcliente) {
-		this.nomcliente = nomcliente;
+
+	public void setCliente(ClienteDTO cliente) {
+		this.cliente = cliente;
 	}
+
+	
+
+	
+
+	
 	
 	
 }

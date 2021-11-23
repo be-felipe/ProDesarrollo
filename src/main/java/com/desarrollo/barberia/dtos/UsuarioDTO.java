@@ -2,16 +2,20 @@ package com.desarrollo.barberia.dtos;
 
 public class UsuarioDTO {
 
-	private Long idusuario;
-	private String nombreusuario;	
-	private String correousuario;
-	private String contrausuario;
-	public UsuarioDTO(long idusuario, String nombreusuario, String correousuario, String contrausuario) {
+	public Long idusuario;
+	public String nombreusuario;	
+	public String correousuario;
+	public String contrausuario;
+	public UsuarioDTO(Long idusuario, String nombreusuario, String correousuario, String contrausuario) {
 		super();
 		this.idusuario = idusuario;
 		this.nombreusuario = nombreusuario;
 		this.correousuario = correousuario;
 		this.contrausuario = contrausuario;
+	}
+	public UsuarioDTO() {
+		
+		
 	}
 	public long getIdusuario() {
 		return idusuario;

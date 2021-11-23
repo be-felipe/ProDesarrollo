@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ import com.desarrollo.barberia.ibussiness.Ireserva;
 import com.desarrollo.barberia.model.Reserva;
 
 @RestController
-@RequestMapping("Reserva")
+@RequestMapping("/Reserva")
 public class ReservaRest {
 	@Autowired
 	private Ireserva reservaService;
@@ -53,8 +54,8 @@ public class ReservaRest {
 			return null;
 		}
 	}
-	@PutMapping(value = "crearReserva")
-    public ReservaDTO crearEstudiante(@RequestBody ReservaDTO dto) {
+	@PostMapping(value = "guardarreserva")
+	ReservaDTO crearEstudiante(@RequestBody ReservaDTO dto) {
 		Reserva reserva= toEntity(dto);
 		return toDTO(reservaService.crearResrva(reserva));
     }
